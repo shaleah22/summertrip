@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Drill</title>
+    <title>Summer Trip</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -74,6 +74,7 @@
     <div id="questionContainer">
         <div id="imageContainer"></div> <!-- Container for multiple images -->
         <p id="questionText"></p>
+        <div id="youtubeVideoContainer"></div>
     </div>
     <div id="reelContainer" style="display: none;"></div>
     <div id="mapContainer"></div>
@@ -81,15 +82,17 @@
     <script>
         const questions = [
         
-       
+              
+
+           
 
               { question: "Wednesday - June 12 Flight Information Here <br><br> JUNE 12 5 PM MIAMI INTERNATIONAL (BA0206 TO LONDON HEATHROW 6:30 AM TERMINAL 5 <br><br> JUNE 13 9:05 AM (BA0583) HEATHROW TERMINAL 5 TO 12:20 PM MALPENSA (MILAN) TERMINAL 1 - LOOK UP CAR RENTAL INFO TOO <br> <br>  JUNE 26 (BA0583) 8:25 AM MALPENSA (MILAN) TERMINAL 1 TO LONDON HEATHROW 9:35 AM <br><br> (BA1528) 12:30 PM HEATHROW LONDON TO 5:05 PM MIAMI INTERNATIONAL ",
               answer: "1",
               /*
               imageUrls: ["https://i0.wp.com/outsidethissmalltown.com/wp-content/uploads/2018/07/bikepath-outsidethissmalltown-19.jpg?fit=5719%2C3218&ssl=1"],
 
-            
-              externalLink: '<a href="https://www.tourissimo.travel/blog/the-lake-garda-bike-path" target="_blank">info </a>',
+            */
+              externalLink: '<a href="https://www.gardenacard.com/img/Faltkarte_Gardena_Card_2023_NEW.pdf" target="_blank">VAL GARDENA MAP </a>',/*
               instagramReel: '<iframe src="https://www.instagram.com/reel/Cw8MHIBsFkE/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57041.8166519074!2d10.791127270869554!3d45.875105163707225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47821770637e6879%3A0x2cd03e54e91a0c19!2sTagliata%20del%20Ponale!5e0!3m2!1sen!2sus!4v1703369681205!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
               */
@@ -118,7 +121,9 @@
              { question: "Thursday June 13 to June 17 Monday Morning) Four nights at Casa Al Sole in Orteisei about a four hour drive from Milan. <br> <br> Search for Casa Al Sole, Streda Scurcià, 2, 39046 Ortisei BZ, Italy in Google Maps",
               answer: "1",
               imageUrls: ["https://cf.bstatic.com/xdata/images/hotel/max1024x768/264955744.jpg?k=0e2df313e97a689cb6e22764aef935c1c3c96951bd6a53142ba2c61e392b64a8&o=&hp=1"],
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10970.109741701597!2d11.6704062!3d46.5768097!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477812f86357c751%3A0x5798ce88fac92c49!2sCasa%20al%20Sole!5e0!3m2!1sen!2sus!4v1703356397335!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10970.109741701597!2d11.6704062!3d46.5768097!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477812f86357c751%3A0x5798ce88fac92c49!2sCasa%20al%20Sole!5e0!3m2!1sen!2sus!4v1703356397335!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/XTUfcLrLaR4?si=Spki3CMJ7y9lv1Mi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+              
 
             },
 
@@ -127,7 +132,8 @@
               imageUrls: ["https://mominitaly.com/wp-content/uploads/2023/06/family-hiking-seceda-dolomites-italy-scaled.jpg"],
               externalLink: '<a href="https://www.google.com/maps/place/Seceda+Ridgeline/@46.601581,11.7341776,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipP6ZmrIb-9xkhxdstJ2TxApgqaH9bwQDip76eHJ!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipP6ZmrIb-9xkhxdstJ2TxApgqaH9bwQDip76eHJ%3Dw114-h86-k-no!7i4000!8i3000!4m16!1m8!3m7!1s0x477813ee15dae6ab:0xfb0dc80bc6d0534f!2sSeceda!8m2!3d46.5980566!4d11.7241679!10e5!16s%2Fg%2F122n5qh0!3m6!1s0x4778138ebc9a62fb:0x71d97c157cd7bf25!8m2!3d46.601581!4d11.7341776!10e5!16s%2Fg%2F11rq14p8t_?entry=ttu" target="_blank">link name</a>',
               instagramReel: '<iframe src="https://www.instagram.com/reel/CuVHFmOOOIW/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10969.85259040574!2d11.6704552!3d46.5780808!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477813eec152c1f5%3A0x914160245397a848!2sSecede%20cable%20car!5e0!3m2!1sen!2sus!4v1703356897594!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10969.85259040574!2d11.6704552!3d46.5780808!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477813eec152c1f5%3A0x914160245397a848!2sSecede%20cable%20car!5e0!3m2!1sen!2sus!4v1703356897594!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/WWn4lfNQy2s?si=Tb4z2EvVAYUjVOYn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
 
             },
 
@@ -136,7 +142,8 @@
               imageUrls: ["https://www.moonhoneytravel.com/wp-content/uploads/2021/01/moonhoneytravel-Alpe-di-Siusi-dolomites-2.jpg"],
               externalLink: '<a href="https://throneandvine.com/alpe-di-siusi-hiking-guide/" target="_blank">Info</a>',
               instagramReel: '<iframe src="https://www.instagram.com/reel/CvIUNiwpPKb/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3185.7159420167313!2d11.6699571!3d46.5702621!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477812fe866cd589%3A0xe1265d95276689f8!2sSeilbahnen%20St.Ulrich%20-%20Seiser%20Alm!5e1!3m2!1sen!2sus!4v1703359851129!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3185.7159420167313!2d11.6699571!3d46.5702621!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477812fe866cd589%3A0xe1265d95276689f8!2sSeilbahnen%20St.Ulrich%20-%20Seiser%20Alm!5e1!3m2!1sen!2sus!4v1703359851129!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/mRkwNvpcs3Y?si=1s8WR7h0srVK1ime" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
             
@@ -147,13 +154,18 @@
               /*externalLink: '<a href="link" target="_blank">link name</a>',
               instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               map: */
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/N3GDs-705vg?si=wmxNnnXVQhRxEE0e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
+
+
+
 
               { question: "SATURDAY 06/15/24 Sunday DRIVE Gardena Pass Dolemites from Orteisei to Cordova is 1 hour drive",
               answer: "1",
               instagramReel: '<iframe src="https://www.instagram.com/reel/Cw71zGzsu4z/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10975.532360953397!2d11.809444!3d46.54999945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47781565cba253b9%3A0xcc38e293b7108587!2sGardena%20Pass!5e0!3m2!1sen!2sus!4v1702899108706!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/ApQ423rqgS8?si=K-ISc-3Gavxt3bI3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
             },
 
               
@@ -166,7 +178,8 @@
               imageUrls: ["https://t3.ftcdn.net/jpg/04/41/04/54/360_F_441045466_GcOxcs5AyDB9z7XkEhXa1IMtuaCpqXws.jpg", "https://www.val-gardena.com/fileadmin/_processed_/7/c/csm_langkofel-plattkofel_1714d52f50.jpg"],
               /*externalLink: '<a href="link" target="_blank">link name</a>',*/
               instagramReel: '<iframe src="https://www.instagram.com/reel/CxlAH6gIVW4/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15713.77881898737!2d11.749095275483658!3d46.50961264460243!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47786b3d1e50a9b1%3A0x598083c46e4db908!2sForcella%20del%20Sassolungo!5e0!3m2!1sen!2sus!4v1703499266808!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15713.77881898737!2d11.749095275483658!3d46.50961264460243!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47786b3d1e50a9b1%3A0x598083c46e4db908!2sForcella%20del%20Sassolungo!5e0!3m2!1sen!2sus!4v1703499266808!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/1SDRcmjstFI?si=kWz5ZTOcStWPI8Yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
 
@@ -184,6 +197,7 @@
               externalLink: '<a href="link" target="_blank">link name</a>',
               instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',*/
               map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2743.4379915981594!2d11.806241400000001!3d46.5588033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477815dd0a7b6f03%3A0x53d30b9978b3c497!2sGran%20Cir!5e0!3m2!1sen!2sus!4v1703445953738!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/k_1KT9zvT0o?si=Lh6F0-qlps1CJXzx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
             },
 
             
@@ -195,16 +209,20 @@
               imageUrls: ["https://as1.ftcdn.net/v2/jpg/03/13/59/66/1000_F_313596624_SX6yifgEohV9pW45Z3O1YLL8h3DWwRlE.jpg"],
               externalLink: '<a href="https://www.moonhoneytravel.com/santa-maddalena-val-di-funes-panorama-trail/" target="_blank">Info</a>',
               /*instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',*/
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2738.8945036818186!2d11.715617399999998!3d46.648598299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477811286b623237%3A0xfc2d7e9dfa64888a!2sPanorama%20di%20Santa%20Maddalena!5e0!3m2!1sen!2sus!4v1703499778697!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2738.8945036818186!2d11.715617399999998!3d46.648598299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477811286b623237%3A0xfc2d7e9dfa64888a!2sPanorama%20di%20Santa%20Maddalena!5e0!3m2!1sen!2sus!4v1703499778697!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/BIXv_WcjBZs?si=Zo8dFZ1P67T4ybVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
+
+
 
             { question: "06/16/23 SUNDAY - ADOLF MUNKEL TRAIL PARCHEGGIO MALGA ZANNES PARKING 8 EUROS FILLS UP FAST EASY THREE HOUR HIKE. ONE HOUR DRIVE FROM HOTEL VAL DI FUNES. <br> <br> Google Map Search Parcheggio Malga Zannes (1), Plattl, 7C, 39054 Renon BZ, Italy ",
               answer: "1",
               imageUrls: ["https://images.squarespace-cdn.com/content/v1/6127310e067bcd08b5dc4a2b/1691282567622-TM21QICFE0CULMFHMES3/IMG_6262.jpg"],
               externalLink: '<a href="https://www.moonhoneytravel.com/hiking-adolf-munkel-trail-dolomites/" target="_blank">Adolf Munkel</a>',
               instagramReel: '<iframe src="https://www.instagram.com/reel/ChK5CwCAtjC/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d684.8918327217253!2d11.763032399999998!3d46.635309299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477816ce4cb6a251%3A0xfbe7614af956d7c3!2sParcheggio%20Malga%20Zannes%20(1)!5e0!3m2!1sen!2sus!4v1703363974162!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d684.8918327217253!2d11.763032399999998!3d46.635309299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477816ce4cb6a251%3A0xfbe7614af956d7c3!2sParcheggio%20Malga%20Zannes%20(1)!5e0!3m2!1sen!2sus!4v1703363974162!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/4sGsWnH5BKQ?si=I1jDER1Bsf3O7pr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
 
@@ -251,7 +269,9 @@
               imageUrls: ["https://s27363.pcdn.co/wp-content/uploads/2022/08/Tre-Cime-di-Lavaredo-Trailhead.jpg.optimal.jpg", "https://s27363.pcdn.co/wp-content/uploads/2022/08/How-to-Hike-to-Cadini-di-Misurina.jpg.optimal.jpg"],
               externalLink: '<a href="https://www.earthtrekkers.com/hiking-tre-cime-di-lavaredo-loop/" target="_blank">tre cime info</a>',
               instagramReel: '<iframe src="https://www.instagram.com/reel/Cyi7YoHN_ye/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d685.1798568001981!2d12.295384!3d46.6125475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4779cd9cf210c5e5%3A0xf7a18c2d0b8921b0!2sTre%20Cime%20di%20Lavaredo%20Hike%20Trailhead!5e0!3m2!1sen!2sus!4v1703441230390!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d685.1798568001981!2d12.295384!3d46.6125475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4779cd9cf210c5e5%3A0xf7a18c2d0b8921b0!2sTre%20Cime%20di%20Lavaredo%20Hike%20Trailhead!5e0!3m2!1sen!2sus!4v1703441230390!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>', 
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/wEGAEndpubg?si=npzYSbjFMXhwV66m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+
 
             },
 
@@ -266,7 +286,7 @@
               { question: "Monday 6/17/24 to 6/18/24 Ristorante Rifugio Ospitale  ",
               answer: "1",
               imageUrls: ["https://cf.bstatic.com/xdata/images/hotel/max1024x768/264290985.jpg?k=abc2d6647526898878c4f80b7232cc10c09575c2f274ede94bd0e6ee575f1ffe&o=&hp=1"],
-              /*externalLink: '<a href="link" target="_blank">link name</a>',
+              externalLink: '<a href="https://www.ristoranteospitale.com/en/menu/" target="_blank">Hotel Menu</a>',/*
               instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               */
               map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10964.807238807214!2d12.1422365!3d46.6030146!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4778317eecdcbdc7%3A0x591366e991c14901!2sRistorante%20Rifugio%20Ospitale!5e0!3m2!1sen!2sus!4v1703669144538!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
@@ -280,7 +300,8 @@
               imageUrls: ["https://www.salzburg.info/deskline/infrastruktur/objekte/grossglockner-hochalpenstrasse_9427/image-thumb__664655__slider-main/Grossglockner%20Hochalpenstrasse-Edelwei%C3%9F-Spitze_9431.jpg"],
               externalLink: '<a href="https://www.grossglockner.at/gg/en/pricesandopeninghours" target="_blank">BUY TICKETS HERE </a>',
               /*instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',*/
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10867.210827651874!2d12.842778!3d47.08333244999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477715a6c2f6e8f5%3A0xd2cd590e3196a135!2sGrossglockner%20High%20Alpine%20Road!5e0!3m2!1sen!2sus!4v1703444894148!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10867.210827651874!2d12.842778!3d47.08333244999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477715a6c2f6e8f5%3A0xd2cd590e3196a135!2sGrossglockner%20High%20Alpine%20Road!5e0!3m2!1sen!2sus!4v1703444894148!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/o-yk7A6wL5A?si=dMOw6kPjQ9zZBK_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
             
@@ -290,10 +311,10 @@
              { question: "06/18/24 TUESDAY maybe Hochosterwitz Castle, Hoho-ster-vitz, Launsdorf, Austria ",
               answer: "1",
               imageUrls: ["https://farm5.staticflickr.com/4011/4550877402_8eb63bca38_c.jpg"],
-              /*
-              externalLink: '<a href="link" target="_blank">link name</a>',
-              instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',*/
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10933.837013940563!2d14.4516882!3d46.7558434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4770137013898889%3A0x7f712102bc6483c9!2sHochosterwitz%20Castle!5e0!3m2!1sen!2sus!4v1703446263530!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              externalLink: '<a href="https://www.instagram.com/burghochosterwitz/?hl=en" target="_blank">INSTAGRAM PAGE</a>',
+              instagramReel: '<iframe src="https://www.instagram.com/reel/CikA4DJj5PB/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10933.837013940563!2d14.4516882!3d46.7558434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4770137013898889%3A0x7f712102bc6483c9!2sHochosterwitz%20Castle!5e0!3m2!1sen!2sus!4v1703446263530!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>', 
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/VogHuAA1lsg?si=P12lvL6WUXx2pnm_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
 
@@ -306,7 +327,8 @@
               imageUrls: ["https://live.staticflickr.com/65535/53420194020_cf0e6d8b85_n.jpg"],
               /*externalLink: '<a href="link" target="_blank">link name</a>',
               instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',*/
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2870.4392211402883!2d13.183376366896066!3d47.473484526718416!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776db4c05260bdd%3A0xaae16bb32073281!2sThe%20Sound%20of%20Music%20Trail%20Werfen!5e0!3m2!1sen!2sus!4v1703501102861!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2870.4392211402883!2d13.183376366896066!3d47.473484526718416!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776db4c05260bdd%3A0xaae16bb32073281!2sThe%20Sound%20of%20Music%20Trail%20Werfen!5e0!3m2!1sen!2sus!4v1703501102861!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/67_md6rLPt0?si=o3KwlvB-KPFtdgwJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
 
@@ -333,6 +355,7 @@
               instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               */
               map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2680.3081632457315!2d13.0456989!3d47.7948618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47769060272103bd%3A0x2b77bed3e9ec556b!2sFortress%20Hohensalzburg!5e0!3m2!1sen!2sus!4v1703501915722!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/ObVPB1xliqg?si=Nr3E02rMpUPpBWSv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
 
@@ -347,7 +370,8 @@
               externalLink: '<a href="link" target="_blank">link name</a>',
               instagramReel: '<iframe src="LINK/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               */
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2679.7623069351453!2d13.041694200000002!3d47.805443200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776907b3f5deb2b%3A0x2cd5d91166d5dd55!2sMirabell%20Palace!5e0!3m2!1sen!2sus!4v1703502012272!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2679.7623069351453!2d13.041694200000002!3d47.805443200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776907b3f5deb2b%3A0x2cd5d91166d5dd55!2sMirabell%20Palace!5e0!3m2!1sen!2sus!4v1703502012272!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/eHxJ66icILU?si=mTF7FIYZWsquvU4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
 
@@ -358,6 +382,9 @@
                 //appenzell
 
               { question: "6/20 DRIVE TO APPENZELL FROM SALZBURG. EARLY MORNNING Switzerland APPENZELL", answer: "1", imageUrls: ["https://live.staticflickr.com/65535/53410109790_7668ae9e1a_z.jpg" ]},
+
+
+
 
 
                   
@@ -372,17 +399,11 @@
 
             },
 
-            
-
-              { question: "FRIDAY 6/21/24 schafler ridge in appenzell area find wasserauen and the ______bahn. (ebenalp?)", answer: "1", imageUrls:[ "https://www.journeyera.com/wp-content/uploads/2020/05/interlaken-hiking-guide-hikes-near-interlaken-04228-1024x682.jpg" ]},
-            
-
-
 
 
              //saxer lucke
 
-              { question: "18 Saxer Lucke Appenzell Parking Small potentially frustrating buy ticket from english german machine 36 for straubahn gondola, busy and slow gondola", answer: "1", 
+              { question: "6/20/24 Thursday  - Saxer Lucke Appenzell Parking Small potentially frustrating buy ticket from english german machine 36 for straubahn gondola, busy and slow gondola", answer: "1", 
               
 
               imageUrls: [
@@ -393,34 +414,46 @@
               externalLink: '<a href="https://example.com" target="_blank">External Link</a>',
                 instagramReel: '<iframe src="https://www.instagram.com/reel/Ct00DewxH6C/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
                 map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9889.13837107386!2d9.4631503!3d47.2443611!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b25d0d11698ef%3A0xda35d23fa891fb38!2sFr%C3%BCmsen%2C%20Luftseilbahn%20Staubern!5e1!3m2!1sen!2sus!4v1703516229483!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
-            
+                youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/vkubVRRU4KA?si=P-mnt7qiBL8GOW45" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'            
 
 
             },
-
-/*
-            
-*/
-
-
-
-
           
            
    
-            { question: " Hoher Kasten Switzerland Appenzell",
+            { question: " 6/20/24 Thursday - Option 2 - Hoher Kasten Switzerland Appenzell",
               answer: "1",
               imageUrls: ["https://static.wixstatic.com/media/0c7413_49986e99df664fe0a22e1a2204a76cc8~mv2.jpg/v1/fill/w_1000,h_537,al_c,q_85,usm_0.66_1.00_0.01/0c7413_49986e99df664fe0a22e1a2204a76cc8~mv2.jpg"],
               externalLink: '<a href="link" target="_blank">dead link</a>',
               instagramReel: '<iframe src="https://www.instagram.com/reel/CxLsUu0sb7k/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30405.615188799788!2d9.465402100365148!3d47.290989665622085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b24afb641d585%3A0x6da317254da55368!2sHoher%20Kasten!5e0!3m2!1sen!2sus!4v1702982068936!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/K1H17x82pRc?si=gp76LMDoPt28pt53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+
 
             },
 
 
 
 
-            { question: "Flumserberg Alpine Flora Trail near Appenzell. Tannenboden gondola lift 10 chf roundtrip. This trail is accessed from the Tannenboden-Maschgenkamm gondola. Southeast Switzerland.   " , answer: "1", externalLink: '<a href="https://swissfamilyfun.com/flumserberg-flower-trail/" target="_blank">Swiss Family Fun Info</a>', imageUrls: ["https://swissfamilyfun.com/wp-content/uploads/2006/09/flumserberg-flower-trail-cloudy.jpg"] , map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173752.34149682036!2d9.13817267599118!3d47.121016567861446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b2b361c10e319%3A0x4af1123a0d96917c!2sParking%20Flumserberg%20Tannenboden!5e0!3m2!1sen!2sus!4v1703063921914!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'},
+
+
+
+            
+
+              { question: "FRIDAY 6/21/24 schafler ridge in appenzell area find wasserauen and the ______bahn. (ebenalp?)", answer: "1", imageUrls:[ "https://www.journeyera.com/wp-content/uploads/2020/05/interlaken-hiking-guide-hikes-near-interlaken-04228-1024x682.jpg" ], instagramReel: '<iframe src="https://www.instagram.com/reel/CxSLIVHsp_x/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5412.858218206633!2d9.42914782573769!3d47.28641338540178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b246e0311dba1%3A0xa79b208e8fe5d6a2!2sWasserauen!5e0!3m2!1sen!2sus!4v1704122893316!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/pTeyfJ5XaVc?si=Cb2FFgX4FS_LPAAn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+
+              },
+            
+
+
+
+
+
+
+            { question: "Friday 6/21/24 Option 3  - if already done Saxer and Hohen  - Flumserberg Alpine Flora Trail near Appenzell. Tannenboden gondola lift 10 chf roundtrip. This trail is accessed from the Tannenboden-Maschgenkamm gondola. Southeast Switzerland.   " , answer: "1", externalLink: '<a href="https://swissfamilyfun.com/flumserberg-flower-trail/" target="_blank">Swiss Family Fun Info</a>', imageUrls: ["https://swissfamilyfun.com/wp-content/uploads/2006/09/flumserberg-flower-trail-cloudy.jpg"] , map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173752.34149682036!2d9.13817267599118!3d47.121016567861446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b2b361c10e319%3A0x4af1123a0d96917c!2sParking%20Flumserberg%20Tannenboden!5e0!3m2!1sen!2sus!4v1703063921914!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/K4T013Q3VbY?si=hEA1KG3virDIa8h8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'},
 
 
 
@@ -444,14 +477,15 @@
 
 
 
-            { question: "6/22/24 SATURDAY RIGIT HIKE - parking for Rigi Panorama Trail ____strasse44. <br> 14  ___ kulm (hill)  tickets for cogway train about 50 chf round trip with no discount goldau to rigi klum can buy online. <br> https://www.rigi.ch/en/experience/rigi-mountain-railways/cogwheel-train-goldau-rigi-kulm", 
+            { question: "6/22/24 SATURDAY RIGI HIKE - parking for Rigi Panorama Trail ____strasse44. <br> 14  ___ kulm (hill)  tickets for cogway train about 50 chf round trip with no discount goldau to rigi klum can buy online. <br> https://www.rigi.ch/en/experience/rigi-mountain-railways/cogwheel-train-goldau-rigi-kulm", 
 
             answer: "1", 
             
             imageUrls: ["https://www.homeschwiizhome.com/wp-content/uploads/2017/08/IMG_3778-1-1030x773.jpg","https://swissfamilyfun.com/wp-content/uploads/2021/09/rigi-panorama-google-earth-labeled.jpg",],
 
               instagramReel: '<iframe src="https://www.instagram.com/reel/CxOQck3tgfY/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>', 
-            map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.042210416905!2d8.530575260308293!3d47.03940252069615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478557e2f2df2d23%3A0xed7633deb39d8efd!2sParkplatz%20Kr%C3%A4bel!5e0!3m2!1sen!2sus!4v1702983337018!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+            map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.042210416905!2d8.530575260308293!3d47.03940252069615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478557e2f2df2d23%3A0xed7633deb39d8efd!2sParkplatz%20Kr%C3%A4bel!5e0!3m2!1sen!2sus!4v1702983337018!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/ouq_BzyiHLg?si=93Bnax1c_kGIQa6x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
              },
 
@@ -460,14 +494,15 @@
             
 
               
-            { question: "Stoos Lodge 6/22/24 to 6/24/24 <br><br> STOOS HIKE 6/23/24 SUNDAY ",
+            { question: "Stoos Lodge 6/22/24 (Saturday) to 6/24/24 Monday Morning <br><br> <strong> STOOS HIKE 6/23/24 SUNDAY </strong>",
               answer: "1",
               imageUrls: ["https://cf.bstatic.com/xdata/images/hotel/max1024x768/414320617.jpg?k=5846c7ef46cc5c54cbef72cc6c872292ab13bc3fe7cd9b38e8b4d0c5f80af64d&o=&hp=1"],
               
               externalLink: '<a href="https://www.stoos.ch/en/pages/parkticket" target="_blank">Info</a>',
               instagramReel: '<iframe src="https://www.instagram.com/reel/CmWa8aMrK7X/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
               
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10888.711703980764!2d8.6670374!3d46.9778398!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47854ff33dce7d45%3A0xda0174964f44d069!2sStoos%20Lodge!5e0!3m2!1sen!2sus!4v1703502666900!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10888.711703980764!2d8.6670374!3d46.9778398!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47854ff33dce7d45%3A0xda0174964f44d069!2sStoos%20Lodge!5e0!3m2!1sen!2sus!4v1703502666900!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo:'<iframe width="560" height="315" src="https://www.youtube.com/embed/ZUFBfh-lojI?si=gp-9aXgE5ArvqrHl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
 
             },
 
@@ -482,7 +517,8 @@
                 imageUrls: ["https://flyingcdn-44f099d7.b-cdn.net/wp-content/uploads/2022/05/Kleiner-Mythen-hike-2-1024x682.jpg", "https://live.staticflickr.com/65535/53402951701_85ed66fbd6_c.jpg"],
 
 
-                map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10875.554406616333!2d8.7032083!3d47.0424167!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47854d0099547755%3A0xd4804c39b3e2e198!2sParkplatz%20Brunni!5e0!3m2!1sen!2sus!4v1703068327599!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' },    
+                map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10875.554406616333!2d8.7032083!3d47.0424167!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47854d0099547755%3A0xd4804c39b3e2e198!2sParkplatz%20Brunni!5e0!3m2!1sen!2sus!4v1703068327599!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+                youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/d7Tmc6QEbZI?si=_wVeOlZj7nB_YJeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>' },    
 
                
 
@@ -507,14 +543,16 @@
             
             
             { question: "10  Brienzer Rothorn Ridge Trail Parking Parkplatz der Rothorn-Bahn. Northeast side of Brienzersee Lake near Brienz, 11  Parking Parkplatz der Rothorn-Bahn for Rothorn Ridge Trail ", answer: "1", imageUrls: ["https://swissfamilyfun.com/wp-content/uploads/2018/06/brienzerrothorn-trail04.jpg", "https://swissfamilyfun.com/wp-content/uploads/2018/06/brienzrothorn-parking-map.jpg" ],  
-              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1516.4932599505394!2d8.035625047543718!3d46.75542468507287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f97538f539f05%3A0x4b4e923fa867960b!2sParkplatz%20der%20Rothorn-Bahn!5e0!3m2!1sen!2sus!4v1702978314488!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'},
+              map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1516.4932599505394!2d8.035625047543718!3d46.75542468507287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f97538f539f05%3A0x4b4e923fa867960b!2sParkplatz%20der%20Rothorn-Bahn!5e0!3m2!1sen!2sus!4v1702978314488!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/a7jbJUu_sI0?si=EBiFY9MuFu-twqDd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'},
 
             
 
             { question: "12 The Aare gorge is twelve chf and the Parkplatz Aareschlucht West Free Parking Lot. 15 MINUTES SOUTHEAST OF BRIENZ" , answer: "1", imageUrls: ["https://portfolio.photoseek.com/img-get/I0000_iQ65cQDP7g/s/1200/I0000_iQ65cQDP7g.jpg", "https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_3200,h_1800/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/st/gadmin/images/partner/di_renzo_aareschlucht_steg_36164.jpg" ],
 
             instagramReel: '<iframe src="https://www.instagram.com/reel/CuJi6KdN7FQ/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>', 
-            map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10941.053544464688!2d8.2030364!3d46.7202663!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f8f8a2c9307c1%3A0x2b0f97925ba9c8d!2sParkplatz%20Aareschlucht%20West!5e0!3m2!1sen!2sus!4v1702978715425!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' },
+            map: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10941.053544464688!2d8.2030364!3d46.7202663!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f8f8a2c9307c1%3A0x2b0f97925ba9c8d!2sParkplatz%20Aareschlucht%20West!5e0!3m2!1sen!2sus!4v1702978715425!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+            youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q2EjaxGoMbY?si=UdhJr7618zZvIdAZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>' },
 
             
 
@@ -586,7 +624,8 @@
 
 
 
-              { question: '6/24/24 MONDAY HIKE - Mannlichen to Kleine Scheidegg, start in Mannlichen as it is a downhill hike that way. Get a cable car in Grindelwald 32 chf <a href="https://www.interlaken.ch/shop/toi_en/tickets/bergbahn/angebote/maennlichen" target="_blank">Mannlichen</a>"', answer: "1", imageUrls: ["https://s27363.pcdn.co/wp-content/uploads/2020/05/Mannlichen-Hike-Switzerland.jpg.optimal.jpg"], instagramReel: '<iframe src="https://www.instagram.com/reel/CwnWiW3MnRO/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>', map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21923.489689444854!2d7.938064700000001!3d46.618143749999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f9f36c54cad91%3A0x5f3614ab836416fd!2sStart%20Panoramaweg%20%22M%C3%A4nnlichen%20zur%20Kleinen%20Scheidegg%22!5e0!3m2!1sen!2sus!4v1702984645295!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'},
+              { question: '6/24/24 MONDAY HIKE - Mannlichen to Kleine Scheidegg, start in Mannlichen as it is a downhill hike that way. Get a cable car in Grindelwald 32 chf <a href="https://www.interlaken.ch/shop/toi_en/tickets/bergbahn/angebote/maennlichen" target="_blank">Mannlichen</a>"', answer: "1", imageUrls: ["https://s27363.pcdn.co/wp-content/uploads/2020/05/Mannlichen-Hike-Switzerland.jpg.optimal.jpg"], instagramReel: '<iframe src="https://www.instagram.com/reel/CwnWiW3MnRO/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>', map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21923.489689444854!2d7.938064700000001!3d46.618143749999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f9f36c54cad91%3A0x5f3614ab836416fd!2sStart%20Panoramaweg%20%22M%C3%A4nnlichen%20zur%20Kleinen%20Scheidegg%22!5e0!3m2!1sen!2sus!4v1702984645295!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>', 
+              youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/R3hzhhbb0W4?si=qSvPDmJTZbE5IR9t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'},
             
 
 
@@ -674,6 +713,88 @@
             },
 
  
+
+
+          { question: "Skiing ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/CxGCywFr8MJ/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+           
+
+
+
+
+
+              { question: "Rockclimbing ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/C0ORrLZyFs1/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+           
+
+
+
+
+              { question: "Snowboard with a Dog ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/CvZOLkVN-U5/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+           
+
+
+
+              { question: "Front Splits ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/CtZTmxPRDI6/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+           
+
+
+
+              { question: "Biking With Dogs ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/Cw5nveLPChV/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+
+
+
+              { question: "Standing up on a Paddleboard With Swimming ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/CwPgC12NPo9/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+
+
+
+
+              { question: "Biking With Dogs Part Two ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/Cw5nveLPChV/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+
+
+
+
+              { question: "Biking With Dogs Part Two ",
+              answer: "1",
+              imageUrl: "",
+              instagramReel: '<iframe src="https://www.instagram.com/reel/CrTiSJLJD_Z/?igsh=MWQ0eWM3eXllbnp3cg%3D%3D/embed" width="400" height="480" frameborder="0" allowtransparency="true"></iframe>',
+
+            },
+
+
             // Array of questions ...
         ];
 
@@ -688,6 +809,7 @@
                 alert("No more questions in this direction.");
             }
         }
+
 
         function displayQuestion(question) {
             document.getElementById('questionText').innerHTML = question.question;
@@ -724,8 +846,61 @@
             } else {
                 mapContainer.style.display = 'none';
             }
+
+            // Code to display YouTube video
+            const youtubeContainer = document.getElementById('youtubeVideoContainer');
+            if (question.youtubeVideo) {
+                youtubeContainer.innerHTML = question.youtubeVideo;
+                youtubeContainer.style.display = 'block';
+            } else {
+                youtubeContainer.style.display = 'none';
+            }
         }
 
+
+
+/*/old code 
+        function displayQuestion(question) {
+            document.getElementById('questionText').innerHTML = question.question;
+
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.innerHTML = ''; // Clear previous images
+
+            if (question.imageUrls && question.imageUrls.length > 0) {
+                question.imageUrls.forEach(url => {
+                    const img = document.createElement('img');
+                    img.src = url;
+                    imageContainer.appendChild(img);
+                });
+            }
+
+            if (question.externalLink) {
+                document.getElementById('externalLinkContainer').innerHTML = question.externalLink;
+            } else {
+                document.getElementById('externalLinkContainer').innerHTML = '';
+            }
+
+
+
+            const reelContainer = document.getElementById('reelContainer'); 
+            if (question.instagramReel) {
+                reelContainer.innerHTML = question.instagramReel;
+                reelContainer.style.display = 'block';
+            } else {
+                reelContainer.style.display = 'none';
+            }
+
+            const mapContainer = document.getElementById('mapContainer');
+            if (question.map) {
+                mapContainer.innerHTML = question.map;
+                mapContainer.style.display = 'block';
+            } else {
+                mapContainer.style.display = 'none';
+            }
+        }
+
+
+*/
         function restartDrill() {
             loadQuestion(0); // Resets to the first question
         }
