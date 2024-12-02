@@ -85,7 +85,7 @@
         
               
 
-              { question: " <strong> THINGS TO REMEMBER </strong> <br>1. Get protein bars<br> 2. Make sure you have a international driver's license <br>  ",
+              { question: " <strong> THINGS TO REMEMBER </strong> <br>1. Get protein bars<br> 2. WALKING STICKS SOME OF THE TRAILS LOOK SKETCHY <br>  ",
               answer: "1",
               /*
               imageUrls: ["https://i0.wp.com/outsidethissmalltown.com/wp-content/uploads/2018/07/bikepath-outsidethissmalltown-19.jpg?fit=5719%2C3218&ssl=1"],
@@ -115,7 +115,7 @@
 
 
 
-              { question: "6/11 <strong> WEDNESDAY CAR RENTAL INFO HERE ",
+              { question: "6/11 <strong> WEDNESDAY CAR RENTAL Car rental in Zuerich  Jun 11, 2025 - Jun 18, 2025<br>Budget go to Avis Counter pick up 11 am on wednesday june 11 drop off at 1030 am on wednesday june 18 orbitz reservation about 350 dollars",
               answer: "1",
               
               imageUrls: [""],
@@ -171,7 +171,7 @@
              
             
 
-            { question: "6/11 <strong> WEDNESDAY</strong> <br>Check in Wednesday, June 11th and check out Friday June 13 Hotel Restaurant Berghaus Malbun Buchserberg, Address: Buchserbergstrasse, 9470 Buchs, Switzerland. Keep going up the road past the google maps location ",
+            { question: "6/11 <strong> WEDNESDAY</strong> <br> THIS IS 90 MINUTES AWAY FROM THE AIRPORT IN ZURICH - Check in Wednesday, June 11th and check out Friday June 13 Hotel Restaurant Berghaus Malbun Buchserberg, Address: Buchserbergstrasse, 9470 Buchs, Switzerland. Keep going up the road past the google maps location ",
               answer: "1",
               imageUrls: ["https://www.dplate.de/photos/alviergruppe/20180812/parkplatz-berghaus-malbun_004.jpg","https://www.swissnomads.ch/Wordpress/wp-content/uploads/2021/06/berghaus-malbun-buchserberg-1024x683.jpg"],
               /*externalLink: '<a href="link" target="_blank">link name</a>',
@@ -192,7 +192,7 @@
 
              //saxer lucke
 
-              { question: "6/11 or 6/12 <strong> THURSDAY</strong> <br>THURSDAY 6/12   - Saxer Lucke Appenzell Parking Small potentially frustrating buy ticket from english german machine 36 for straubahn gondola, busy and slow gondola. GOOGLE MAPS Frümsen, Luftseilbahn Staubern, Frümsnerbergstrasse, 9467 Sennwald, Switzerland <br><br> <strong> 20 minutes from hotel.</strong>", answer: "1", 
+              { question: "6/11 or 6/12 <strong> THURSDAY</strong> <br>THURSDAY 6/12   - Saxer Lucke Appenzell - ACCORDING TO VIDEO THE GONDOLA IS 8 MINUTES UP AND THEN IT IS A 90 WALK TO SAXER LUCKE, FOLLOW THE SIGNS Parking Small potentially frustrating buy ticket from english german machine 36 for straubahn gondola, busy and slow gondola. GOOGLE MAPS Frümsen, Luftseilbahn Staubern, Frümsnerbergstrasse, 9467 Sennwald, Switzerland <br><br> <strong> 20 minutes from hotel.</strong>", answer: "1", 
               
 
               imageUrls: [
@@ -241,13 +241,13 @@
             
 
 
-
+/*
             { question: "6/12 OR 6/13 <strong> THURSDAY OR FRIDAY </strong> <br>Option 3  - if already done Saxer and Hohen  - Flumserberg Alpine Flora Trail near Appenzell. Tannenboden gondola lift 10 chf roundtrip. This trail is accessed from the Tannenboden-Maschgenkamm gondola. Southeast Switzerland.   " , answer: "1", externalLink: '<a href="https://swissfamilyfun.com/flumserberg-flower-trail/" target="_blank">Swiss Family Fun Info</a>', imageUrls: ["https://swissfamilyfun.com/wp-content/uploads/2006/09/flumserberg-flower-trail-cloudy.jpg"] , map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173752.34149682036!2d9.13817267599118!3d47.121016567861446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b2b361c10e319%3A0x4af1123a0d96917c!2sParking%20Flumserberg%20Tannenboden!5e0!3m2!1sen!2sus!4v1703063921914!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
             youtubeVideo: '<iframe width="560" height="315" src="https://www.youtube.com/embed/K4T013Q3VbY?si=hEA1KG3virDIa8h8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'},
 
 
 
-           
+           */
           
 
 
@@ -823,9 +823,14 @@
 
         function setupQuestionNavigationButtons() {
             const nextQuestionButton = document.getElementById('nextQuestionButton');
-            nextQuestionButton.onclick = function() {
-                loadQuestion(currentQuestionIndex + 1);
-            };
+nextQuestionButton.onclick = function() {
+    if (currentQuestionIndex + 1 < questions.length) {
+        loadQuestion(currentQuestionIndex + 1);
+    } else {
+        loadQuestion(0); // Loop back to the first question
+    }
+};
+
 
             const previousQuestionButton = document.getElementById('previousQuestionButton');
             previousQuestionButton.onclick = function() {
